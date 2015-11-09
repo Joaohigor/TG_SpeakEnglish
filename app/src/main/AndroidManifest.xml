@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.joao.myapplication" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Tg"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Tela_Principal"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".Tela_opcoes"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity android:name=".SplashScreenActivity"
+            android:label=""
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Tela_figuras"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <!--<activity android:name=".MainActivity"-->
+            <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen">-->
+        <!--</activity>-->
+    </application>
+
+
+</manifest>

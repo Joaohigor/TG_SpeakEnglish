@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#69a9ff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Animais"
+            android:id="@+id/btn_animal"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="67dp"
+            android:onClick="botaoAnimal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cores"
+            android:id="@+id/btn_cor"
+            android:layout_marginTop="41dp"
+            android:layout_below="@+id/btn_animal"
+            android:layout_centerHorizontal="true"
+            android:onClick="botaoCor"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Frutas"
+            android:id="@+id/btn_fruta"
+            android:layout_below="@+id/btn_cor"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:onClick="botaoFruta"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voltar"
+            android:id="@+id/btn_voltar"
+            android:layout_below="@+id/btn_fruta"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:onClick="botaoVoltar" />
+    </RelativeLayout>
+</LinearLayout>
