@@ -13,9 +13,6 @@ public class Tela_Principal extends Activity {
 
     MediaPlayer mp;
     MediaPlayer bg;
-//    private TextView txtSpeechInput;
-//    private ImageButton btnSpeak;
-//    private final int REQ_CODE_SPEECH_INPUT = 100;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

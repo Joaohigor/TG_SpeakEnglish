@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.joao.myapplication" >
+    package="com.example.joao.myapplication">
 
     <application
+
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="Tg"
-        android:theme="@style/AppTheme" >
+        android:icon="@mipmap/coala_launcher"
+        android:theme="@style/AppTheme"
+        android:label="@string/app_name">
         <activity
             android:name=".Tela_Principal"
-            android:label="@string/app_name"
+            android:label="Speaking English"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->

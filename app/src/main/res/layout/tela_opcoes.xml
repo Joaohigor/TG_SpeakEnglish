@@ -9,44 +9,90 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Animais"
-            android:id="@+id/btn_animal"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="67dp"
-            android:onClick="botaoAnimal" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cores"
-            android:id="@+id/btn_cor"
-            android:layout_marginTop="41dp"
-            android:layout_below="@+id/btn_animal"
-            android:layout_centerHorizontal="true"
-            android:onClick="botaoCor"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_animal"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="67dp"
+                android:onClick="botaoAnimal"
+                android:background="@drawable/ic_ico_animal"
+                android:layout_gravity="center_horizontal" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Frutas"
-            android:id="@+id/btn_fruta"
-            android:layout_below="@+id/btn_cor"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
-            android:onClick="botaoFruta"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animals"
+                android:textStyle="bold"
+                android:id="@+id/textView3"
+                android:layout_gravity="center_horizontal"
+                android:textIsSelectable="false"
+                android:typeface="sans" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Voltar"
-            android:id="@+id/btn_voltar"
-            android:layout_below="@+id/btn_fruta"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="35dp"
-            android:onClick="botaoVoltar" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_cor"
+                android:layout_marginTop="41dp"
+                android:layout_below="@+id/btn_animal"
+                android:layout_centerHorizontal="true"
+                android:onClick="botaoCor"
+                android:background="@drawable/ic_ico_collors"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Collors"
+                android:textStyle="bold"
+                android:id="@+id/textView"
+                android:layout_gravity="center_horizontal"
+                android:typeface="sans" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_fruta"
+                android:layout_below="@+id/btn_cor"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:onClick="botaoFruta"
+                android:background="@drawable/ic_ico_fruit"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fruits"
+                android:textStyle="bold"
+                android:id="@+id/textView2"
+                android:layout_gravity="center_horizontal"
+                android:typeface="sans" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_voltar"
+                    android:onClick="botaoVoltar"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/ico_back"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

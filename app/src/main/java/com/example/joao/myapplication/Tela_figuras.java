@@ -6,6 +6,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
@@ -24,13 +25,18 @@ public class Tela_figuras extends Activity {
     private int lastPage;
     private String atual;
     private int pos;
+    public String prefix;
+    private TextToSpeech tts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_figuras);
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
-        adapter = new ImageAdapter(this, getImages("an_"));
+
+        Bundle extras = getIntent().getExtras();
+        prefix = extras.getString("prefix");
+        adapter = new ImageAdapter(this, getImages(prefix));
         viewPager.setAdapter(adapter);
         this.pos = 0;
         this.atual = adapter.drawables.get(pos).name;
@@ -58,11 +64,35 @@ public class Tela_figuras extends Activity {
             public void onPageScrollStateChanged(int arg0) {
             }
         });
-        btnSpeak = (ImageButton) findViewById(R.id.btnSpeak);
+//        btnSpeak = (ImageButton) findViewById(R.id.btnSpeak);
     }
 
     public void btnSpeak(View v) {
         promptSpeechInput();
+    }
+
+    public void btnSound(View v){
+         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+
+            @Override
+            public void onInit(int status) {
+                // TODO Auto-generated method stub
+                if(status == TextToSpeech.SUCCESS){
+                    int result = tts.setLanguage(Locale.US);
+                    if(result==TextToSpeech.LANG_MISSING_DATA ||
+                            result==TextToSpeech.LANG_NOT_SUPPORTED){
+                        Log.e("error", "This Language is not supported");
+                    }
+                    else{
+                       tts.speak(atual, TextToSpeech.QUEUE_FLUSH, null);
+                    }
+                }
+                else
+                    Log.e("error", "Initilization Failed!");
+            }
+        });
+        tts.setLanguage(Locale.US);
+        tts.speak(atual, TextToSpeech.QUEUE_ADD, null);
     }
 
     private void promptSpeechInput() {
@@ -98,7 +128,7 @@ public class Tela_figuras extends Activity {
                         alert.show();
                     } else {
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                        builder.setMessage("Errouuuuuu!!").setCancelable(true);
+                        builder.setMessage("Errou!").setCancelable(true);
                         AlertDialog alert = builder.create();
                         alert.show();
                     }
@@ -127,5 +157,6 @@ public class Tela_figuras extends Activity {
     public boolean answerIsCorrect(String name) {
         return this.atual.equals(name);
     }
+
 
 }

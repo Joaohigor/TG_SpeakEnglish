@@ -24,16 +24,19 @@ public class Tela_opcoes extends Activity {
     public void botaoAnimal(View v){
         Intent i = new Intent();
         i.setClass(this, Tela_figuras.class);
+        i.putExtra("prefix", "an_");
         startActivity(i);
     }
     public void botaoFruta(View v){
         Intent i = new Intent();
         i.setClass(this, Tela_figuras.class);
+        i.putExtra("prefix","fr_");
         startActivity(i);
     }
     public void botaoCor(View V){
         Intent i = new Intent();
         i.setClass(this, Tela_figuras.class);
+        i.putExtra("prefix","co_");
         startActivity(i);
     }
 }
